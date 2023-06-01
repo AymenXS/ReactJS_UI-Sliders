@@ -6,14 +6,14 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 const Carousel = () => {
   const [people, setPeople] = useState(longList);
   const [currentPerson, setCurrentPerson] = useState(0);
+
   const prevSlide = () => {
     setCurrentPerson((oldPerson) => {
-      console.log(oldPerson);
       const result = (oldPerson - 1 + people.length) % people.length;
-      console.log(result);
       return result;
     });
   };
+
   const nextSlide = () => {
     setCurrentPerson((oldPerson) => {
       const result = (oldPerson + 1) % people.length;
